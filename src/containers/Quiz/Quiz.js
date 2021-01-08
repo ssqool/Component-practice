@@ -47,6 +47,12 @@ class Quiz extends Component {
     const question = this.state.quiz[this.state.activeQuestion]
     const results = this.state.results
 
+    console.log(`answerId: ${answerId}`)
+    console.log(`results:`)
+    console.log(results)
+    console.log(`question:`)
+    console.log(question)
+
     if (question.rightAnswerId === answerId) {
       if(!results[question.id]) {
         results[question.id] = 'success'
