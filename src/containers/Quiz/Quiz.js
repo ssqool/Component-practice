@@ -32,6 +32,17 @@ class Quiz extends Component {
           {text: 525, id: 3},
           {text: 679, id: 4}
         ]
+      },
+      {
+        question: 'Какого цвета небо?',
+        rightAnswerId: 2,
+        id: 3,
+        answers: [
+          {text: 'Черный', id: 1},
+          {text: 'Синий', id: 2},
+          {text: 'Красный', id: 3},
+          {text: 'Зеленый', id: 4}
+        ]
       }
     ]
   }
@@ -56,12 +67,11 @@ class Quiz extends Component {
     if (question.rightAnswerId === answerId) {
       if(!results[question.id]) {
         results[question.id] = 'success'
-
-        this.setState({
-          answerState: {[answerId]: 'success'},
-          results
-        })
       }
+      this.setState({
+        answerState: {[answerId]: 'success'},
+        results
+      })
 
       const timeout = window.setTimeout(() => {
         if (this.isQuizFinished()) {
